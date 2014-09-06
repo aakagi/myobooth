@@ -11,7 +11,6 @@ var userSchema = new mongoose.Schema({
   google: String,
   github: String,
   instagram: String,
-  linkedin: String,
   tokens: Array,
 
   profile: {
