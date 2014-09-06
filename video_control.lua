@@ -17,37 +17,37 @@ end
 function onPoseEdge(pose, edge)
     -- Produces letter presses on gesture to be used by a site
     --
-    -- Fist - f
-    -- waveIn - i
-    -- waveOut - o
-    -- thumbToPinky - t
+    -- Fist - q
+    -- waveIn - w
+    -- waveOut - e
+    -- thumbToPinky - r
 
     if pose == "fist" then
         length = time_check(edge, 300)
         if length == true then
             myo.debug("fisting")            
-            myo.keyboard("f", "press")
+            myo.keyboard("q", "press")
         end
     end
     if pose == "waveIn" then
         length = time_check(edge, 300)
         if length == true then
             myo.debug("waving in")            
-            myo.keyboard("i", "press")
+            myo.keyboard("w", "press")
         end
     end
     if pose == "waveOut" then
         length = time_check(edge, 300)
         if length == true then
             myo.debug("waving out")            
-            myo.keyboard("o", "press")
+            myo.keyboard("e", "press")
         end
     end
     if pose == "thumbToPinky" then
         length = time_check(edge, 100)
         if length == true then
             myo.debug("peace")            
-            myo.keyboard("t", "press")
+            myo.keyboard("r", "press")
         end
     end
 end
