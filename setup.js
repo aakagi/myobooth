@@ -41,7 +41,7 @@ var homeTitle = blessed.text({
   align: 'center',
   fg: 'blue',
   bg: 'white',
-  content: 'Hackathon Starter (c) 2014'
+  content: 'Thalmic Pics (c) 2014'
 });
 
 var footer = blessed.text({
@@ -628,3 +628,4 @@ for (var i = 0; i < os.cpus().length; i++) {
 
   fs.writeFileSync('cluster_app.js', fileContents);
 }
+
