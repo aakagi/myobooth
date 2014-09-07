@@ -1,25 +1,32 @@
 extends layout
 
 block content
-  input(id="csrf" type="hidden", name="_csrf", value="#{csrf_token}")
   script.
-    ZiggeoApi.Events.on("submitted", function (data) {
-      var id = data.video.token;
-      $.post('/createVideo?id=' + id, function(err, res) {
-        console.log(err);
-        console.log(res);
-      });
+    // ZiggeoApi.Events.on("submitted", function (data) {
+    //   var id = data.video.token;
+    // });
+    $(document).on("keypress", function(e) {
+      switch(e.charCode) {
+      case 102:
+        console.log("play/pause");
+        break;
+      case 105:
+        console.log("prev filter");
+        break;
+      case 111:
+        console.log("next filter");
+        break;
+      case 116:
+        console.log("share");
+        break;
+      }
     });
   .row.title-container
     .col-sm-8
       h1 MyoBooth
       p.lead A gesture-based image management service that integrates with multiple APIs
-    //
-      .col-sm-4
-        button.btn.download Get Myo Script
   hr
   .row
     .col-sm-12
       <ziggeo></ziggeo>
-      // <ziggeo ziggeo-video="">
 

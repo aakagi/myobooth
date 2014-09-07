@@ -25,28 +25,28 @@ function onPoseEdge(pose, edge)
     if pose == "fist" then
         length = time_check(edge, 300)
         if length == true then
-            myo.debug("fisting")            
+            myo.debug("fisting")
             myo.keyboard("f", "press")
         end
     end
     if pose == "waveIn" thentfifffftfffi
         length = time_check(edge, 300)
         if length == true then
-            myo.debug("waving in")            
+            myo.debug("waving in")
             myo.keyboard("i", "press")
         end
     end
     if pose == "waveOut" then
         length = time_check(edge, 300)
         if length == true then
-            myo.debug("waving out")            
+            myo.debug("waving out")
             myo.keyboard("o", "press")
         end
     end
     if pose == "thumbToPinky" then
         length = time_check(edge, 100)
         if length == true then
-            myo.debug("peace")            
+            myo.debug("peace")
             myo.keyboard("t", "press")
         end
     end
