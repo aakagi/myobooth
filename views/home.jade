@@ -5,6 +5,10 @@ block content
     // ZiggeoApi.Events.on("submitted", function (data) {
     //   var id = data.video.token;
     // });
+    navigator.getUserMedia  = navigator.getUserMedia ||
+                              navigator.webkitGetUserMedia ||
+                              navigator.mozGetUserMedia ||
+                              navigator.msGetUserMedia;
     $(document).on("keypress", function(e) {
       switch(e.charCode) {
       case 102:
@@ -18,6 +22,13 @@ block content
         break;
       case 116:
         console.log("share");
+        FB.api("/me/photos", "POST",
+          { "url": "" },
+          function (response) {
+            if (response && !response.error) {
+              console.log(response);
+            }
+          });
         break;
       }
     });
@@ -25,8 +36,12 @@ block content
     .col-sm-8
       h1 MyoBooth
       p.lead A gesture-based image management service that integrates with multiple APIs
-  hr
   .row
     .col-sm-12
-      <ziggeo></ziggeo>
+      p Take photo
+      input(type="file", accept="image/*;capture=camera")
+      br
+  .row
+    .col-sm-12
+      ziggeo
 
