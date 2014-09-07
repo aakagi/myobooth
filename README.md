@@ -2,6 +2,6 @@ MyoBooth
 =======================
 Photo Booth App using the Myo, from Thalmic Labs
 
-![](https://d1yjwyup50ou7g.cloudfront.net/static/9c8e3ab/img/fb_myo.jpg =300x300)
+MyoBooth allows users to take snapshots from a webcam and apply effects by using hand gestures through the Myo motion capture wristband created by Thalmic Labs.
 
 
