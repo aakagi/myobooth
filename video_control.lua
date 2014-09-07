@@ -29,7 +29,7 @@ function onPoseEdge(pose, edge)
             myo.keyboard("f", "press")
         end
     end
-    if pose == "waveIn" thentfifffftfffi
+    if pose == "waveIn" then
         length = time_check(edge, 300)
         if length == true then
             myo.debug("waving in")
