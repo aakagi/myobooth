@@ -1,4 +1,4 @@
-scriptId = 'com.thalmic.examples.outputeverything'
+scriptId = 'com.thalmic.examples.video'
 
 function time_check(edge, time)
     local start = myo.getTimeMilliseconds()
@@ -17,37 +17,44 @@ end
 function onPoseEdge(pose, edge)
     -- Produces letter presses on gesture to be used by a site
     --
-    -- Fist - q
-    -- waveIn - w
-    -- waveOut - e
-    -- thumbToPinky - r
+    -- Fist - f
+    -- waveIn - i
+    -- waveOut - o
+    -- thumbToPinky - t
 
     if pose == "fist" then
         length = time_check(edge, 300)
         if length == true then
             myo.debug("fisting")            
-            myo.keyboard("q", "press")
+            myo.keyboard("space", "press")
         end
     end
     if pose == "waveIn" then
         length = time_check(edge, 300)
         if length == true then
             myo.debug("waving in")            
-            myo.keyboard("w", "press")
+            myo.keyboard("left_arrow", "press")
         end
     end
     if pose == "waveOut" then
         length = time_check(edge, 300)
         if length == true then
             myo.debug("waving out")            
-            myo.keyboard("e", "press")
+            myo.keyboard("right_arrow", "press")
         end
     end
     if pose == "thumbToPinky" then
         length = time_check(edge, 100)
         if length == true then
-            myo.debug("peace")            
-            myo.keyboard("r", "press")
+            myo.debug("peace")        
+            myo.keyboard("f", "press")
+        end
+    end
+    if pose == "fingersSpread" then
+        length = time_check(edge, 100)
+        if length == true then
+            myo.debug("spreading")
+            myo.keyboard("d", "press")
         end
     end
 end

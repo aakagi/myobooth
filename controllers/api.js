@@ -26,7 +26,7 @@ var _ = require('lodash');
 
 exports.getApi = function(req, res) {
   res.render('api/index', {
-    title: 'API Examples'
+    title: 'API Setup'
   });
 };
 

@@ -1,20 +1,47 @@
 extends layout
 
 block content
+  script.
+    // ZiggeoApi.Events.on("submitted", function (data) {
+    //   var id = data.video.token;
+    // });
+    navigator.getUserMedia  = navigator.getUserMedia ||
+                              navigator.webkitGetUserMedia ||
+                              navigator.mozGetUserMedia ||
+                              navigator.msGetUserMedia;
+    $(document).on("keypress", function(e) {
+      switch(e.charCode) {
+      case 102:
+        console.log("play/pause");
+        break;
+      case 105:
+        console.log("prev filter");
+        break;
+      case 111:
+        console.log("next filter");
+        break;
+      case 116:
+        console.log("share");
+        FB.api("/me/photos", "POST",
+          { "url": "" },
+          function (response) {
+            if (response && !response.error) {
+              console.log(response);
+            }
+          });
+        break;
+      }
+    });
   .row.title-container
     .col-sm-8
-      h1 Thalmic Pics
+      h1 MyoBooth
       p.lead A gesture-based image management service that integrates with multiple APIs
-    .col-sm-4
-      button.btn.download Get Myo Script
-  hr
   .row
-    .col-sm-5
-      h2 Myo
-      p Myo armband's rich gesture recognition technology allows you to take and view pictures easily and naturally.
-      img(src="/img/myo_crop.jpg" height=240)
-    .col-sm-5.col-sm-offset-1
-      h2 Fully Integrated
-      p A diverse set of APIs allows you to share and store your pictures on all of your favorite platforms.
-      img.yo(src="/img/yo.jpg" height=200)
+    .col-sm-12
+      p Take photo
+      input(type="file", accept="image/*;capture=camera")
+      br
+  .row
+    .col-sm-12
+      ziggeo
 

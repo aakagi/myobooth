@@ -7,8 +7,11 @@ html
     meta(name='description', content='')
     meta(name='csrf-token', content=_csrf)
     meta(name='author', content='')
-    title #{title} | Thalmic Pics
+    title #{title} | MyoBooth
+    link(rel="stylesheet", href="http://assets.ziggeo.com/css/ziggeo-betajs-player.min.css")
     != css('styles')
+    script(src="http://assets.ziggeo.com/js/ziggeo-jquery-json2-betajs-player.min.js")
+    script ZiggeoApi.token = "b364fe4ea1807e806e78a8f821573ea0";
   body
     include partials/navbar
 
